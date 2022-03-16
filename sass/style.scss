@@ -1,0 +1,398 @@
+/*
+Theme Name: Kraft Child
+Theme URI: https://kraft.caliberthemes.com
+Description: Minimal Portfolio WordPress Theme
+Author: CaliberThemes
+Author URI: https://www.caliberthemes.com
+Template: kraft
+Version: 2.0
+License: custom
+License URI: http://themeforest.net/licenses
+Tags: right-sidebar, featured-images, post-formats,  sticky-post
+Text Domain: kraft
+*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,500&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+
+@import 'variables';
+
+
+// font-weight: 400 regular, 500 medium, 700 bold, 800 extra-bold
+
+
+
+/////////////////////////
+// Mixins
+@mixin link {
+  color: $black;
+  text-decoration: none;
+  position: relative;
+
+
+  &::after{
+    content: '';
+    //background: $primary-color;
+    background: $grey-background;
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    left: 0;
+    left: -5px;
+    top: 32px;
+    position: absolute;
+    z-index: -1000;
+  }
+}
+
+@mixin padding {
+  padding: 0 120px;
+}
+
+
+/////////////////////////
+// Typography
+
+body {
+  font-family: $font;
+}
+
+h1, h2, h3, h4, h5, .vertical-text {
+  font-family: $font;
+  font-weight: $bold;
+  color: $black;
+}
+
+p {
+  $font-family: $font;
+  color: $black;
+}
+
+
+
+// Hero Title
+.next-project a span,
+.hero h1 {
+  font-size: 110px;
+  font-weight: $bold;
+  line-height: 1;
+  @include padding;
+}
+
+// Hero Tagline
+.hero p,
+.next-project a {
+  @include padding;
+  font-size: 40px !important;
+  font-weight: $medium !important;
+  line-height: 1.5 !important;
+  margin-top: -10px;
+}
+
+
+// Intro Paragraph, Content Titles, Disclaimer Text
+.content-section .intro p,
+.content-section h2,
+.colored-section .intro p,
+.colored-section h2 {
+  @include padding;
+  font-size: 28px !important;
+  font-weight: $medium !important;
+  line-height: 1.6 !important;
+  color: $black;
+}
+
+
+// Content Paragraph
+.content-section p,
+.colored-section p,
+.content-section h3 {
+  @include padding;
+  font-size: 22px !important;
+  font-weight: $regular;
+  line-height: 1.6 !important;
+  color: $grey-text;
+}
+
+
+// Project Tiles - Title
+.projects-section h4 {
+  font-size: 48px !important;
+  font-weight: $bold !important;
+  color: $black !important;
+}
+// Project Tiles - Subtitle
+.projects-section p {
+  color: $grey-text !important;
+  font-weight: $regular;
+  font-size: 20px !important;
+}
+
+// Vertical Text
+.vertical-text {
+  font-size: 40px !important;
+  font-weight: $bold !important;
+  line-height: 1;
+  color: $black;
+}
+
+// Disclaimer Title
+.content-section h3 {
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+// Image Caption
+.image-label {
+  margin-bottom: 140px !important;
+}
+
+
+
+
+// General Styling
+
+body {
+  background: $grey-background;
+
+  &.home {
+    background: $white;
+  }
+}
+
+.row-container {
+  max-width: 1220px; // orig: 1170px
+}
+
+
+
+
+
+
+// Logo
+.logo-brand img {
+  max-width: 50px !important;
+}
+
+
+
+
+// Hero Sections
+// Next Project Section
+
+.hero-image {
+  height: 80vh;
+  min-height: 460px !important;
+
+  h1, h2, h3, h4, h5, p {
+    color: $white !important;
+  }
+}
+
+// black transparent overlay
+.hero-image > div,
+.next-project > div {
+  position: initial;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba($black,0), rgba($black,0.2));
+    //background: linear-gradient(rgba($black,0), rgba($black,0));
+    position: absolute;
+    top: 0;
+    left:0;
+  }
+}
+
+
+.hero-home {
+  height: 80vh;
+  min-height: 460px !important;
+  padding-bottom: 150px;
+
+  h1 {
+    color: $black !important;
+  }
+
+  a {
+    @include link;
+  }
+}
+
+
+.next-project {
+  height: 70vh;
+  min-height: 460px !important;
+
+  a {
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 400px 0;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+
+
+// Projects Section Homepage
+
+.projects-section {
+  margin-top: -150px;
+
+  h4 {
+    margin-top: 10px !important;
+    display: inline;
+
+    //@include link;
+
+    &::after {
+      top: 40px;
+      //left: -5px;
+      //right: 0;
+      background-color: $grey-light;
+    }
+  }
+
+  .img-box {
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  .button {
+    a {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      color: transparent;
+      background: transparent;
+      border: none;
+    }
+  }
+}
+
+
+
+// Content Section
+
+.content-section {
+  a {
+    @include link;
+
+    &::after {
+      top: 25px;
+    }
+  }
+}
+
+
+// Colored Section
+
+.colored-section {
+  background: $primary-color;
+  overflow: visible !important;
+  margin-top: 100px;
+
+  img {
+    margin-top: -60px;
+  }
+}
+
+
+
+// Other Elements
+
+.vertical-text {
+  position: absolute;
+  top: 80px;
+  right: -20px;
+  display: inline;
+  transform: rotate(-90deg);
+  transform-origin: center right;
+}
+
+
+.circle {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: $primary-color;
+  border-radius: 50%;
+  position: relative;
+  left: 520px;
+  top: 180px;
+  z-index: -1;
+  //mix-blend-mode: multiply;
+
+  animation: shape-move 35s ease-in-out infinite;
+}
+
+
+@keyframes shape-move {
+  0% {
+    left: 520px;
+    top: 180px;
+  }
+
+  30% {
+    left: 560px;
+    top: 210px;
+  }
+
+  70% {
+    left: 580px;
+    top: 160px;
+  }
+
+  100% {
+    left: 520px;
+    top: 180px;
+  }
+}
+
+
+// Image Shadow
+
+.shadow img {
+  box-shadow: 0px 0px 30px #dddddd;
+}
+
+
+// Pattern
+.hero-home {
+  background-image: radial-gradient($grey-dots 0.5px, #fff 0.5px);
+  background-size: 10px 10px;
+}
+
+.colored-section {
+  background-image: radial-gradient($grey-dots 0.5px, $primary-color 0.5px);
+  background-image: radial-gradient($grey-dots 0.5px, $white 0.5px);
+  background-size: 10px 10px;
+}
+
+.circle, .hero-home a::after {
+  background-image: radial-gradient($grey-dots 0.5px, $primary-color 0.5px);
+  background-size: 10px 10px;
+
+  //background: $white;
+}
+
+// .disclaimer {
+//   background-image: radial-gradient($grey-dots 0.5px, $grey-background 0.5px);
+//   background-size: 10px 10px;
+//   //position: relative;
+//   //z-index: -1;
+// }
+
+
