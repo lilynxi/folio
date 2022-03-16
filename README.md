@@ -1,11 +1,11 @@
-# Die Brücke - Gesellschaft für Erziehungsberatung und Lernhilfe
-This is a child-theme of the wordpress theme 'wilson'
+# Portfolio
+This is a child-theme of the wordpress theme 'kraft'
 
 ## Instructions
 - create a new wordpress installation
-- install theme wilson
+- install theme kraft
 - open a terminal
 - $ cd into theme-folder
 - $ git clone this repo
-- $ cd die-bruecke
+- $ cd kraft-child
 - $ compass compile (this is necessary to compile the scss-file. more on sass and compass can be found here: http://sass-lang.com/, http://compass-style.org/)
