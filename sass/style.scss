@@ -14,14 +14,9 @@ Text Domain: kraft
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,500&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import 'variables';
 
-
-// font-weight: 400 regular, 500 medium, 700 bold, 800 extra-bold
 
 
 
@@ -54,7 +49,7 @@ Text Domain: kraft
 
 
 /////////////////////////
-// Typography
+// Typography/folio/wp-content/uploads/2023/05/Bildschirmfoto-2023-05-09-um-18.11.48.png
 
 body {
   font-family: $font;
@@ -64,19 +59,11 @@ h1, h2, h3, h4, h5, .vertical-text {
   font-family: $font;
   font-weight: $bold;
   color: $black !important;
-
-  .home & {
-    color: $white !important;
-  }
 }
 
 p {
   font-family: $font;
   color: $black;
-
-  .home & {
-    color: $white;
-  }
 }
 
 
@@ -90,6 +77,12 @@ p {
   @include padding;
 }
 
+h2 {
+  font-weight: $medium;
+  font-size: 56px;
+  line-height: 1.2;
+}
+
 // Hero Tagline
 .hero p,
 .next-project a {
@@ -101,32 +94,69 @@ p {
 }
 
 // Hero Home
-.hero.hero-home {
-  h1 {
-    padding-right: 0;
-    padding-left: 60px;
+.hero.hero-home { }
+
+
+
+
+// Navigation
+
+.ham-trigger-wrap {
+  z-index: 100;
+
+  &.open .ham-trigger span {
+    &:before, &:after {
+      background-color: $white !important;
+    }
   }
-  p {
-    font-size: 34px !important;
-    padding-right: 0;
-    padding-left: 60px;
-  }
-  .small p {
-    font-size: 20px !important;
+
+  .ham-trigger {
+    span { background-color: transparent !important; }
   }
 }
 
-// Navigation Links
-.main-navigation a {
-  font-size: 40px !important;
-  font-weight: $medium !important;
-  font-family: $font !important;
-  text-transform: none !important;
-  color: $black !important;
+#site-navigation {
+  //left: 100%;
+  left: 0;
+  opacity: 0;
+  width: 100% !important;
+  display: none;
+  transition: all ease-in-out 300ms;
 
-  .home & {
-    color: $white !important;
+  &.open {
+    left: 0;
+    opacity: 100%;
+    width: 100% !important;   
+    display: block;
   }
+
+  #hamburger-menu-close-trigger { display: none !important; }
+}
+
+.page-click-capture {
+  display: none !important;
+}
+
+.site-header.hamburger-side {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+.main-navigation {
+  background: $black !important;
+  //width: 100% !important;
+}
+.main-navigation a {
+  //background: red;
+  // font-size: 40px !important;
+  // font-weight: $medium !important;
+  // font-family: $font !important;
+  // text-transform: none !important;
+  // color: $black !important;
+
+  // .home & {
+  //   color: $white !important;
+  // }
 }
 
 
@@ -134,9 +164,7 @@ p {
 
 // Intro Paragraph, Content Titles, Disclaimer Text
 .content-section .intro p,
-.content-section h2,
-.colored-section .intro p,
-.colored-section h2 {
+.content-section h2 {
   @include padding;
   font-size: 28px !important;
   font-weight: $medium !important;
@@ -145,9 +173,9 @@ p {
 }
 
 
+
 // Content Paragraph
 .content-section p,
-.colored-section p,
 .content-section h3 {
   @include padding;
   font-size: 22px !important;
@@ -170,13 +198,6 @@ p {
   font-size: 20px !important;
 }
 
-// Vertical Text
-// .vertical-text {
-//   font-size: 40px !important;
-//   font-weight: $bold !important;
-//   line-height: 1;
-//   color: $black;
-// }
 
 // Disclaimer Title
 .content-section h3 {
@@ -189,17 +210,17 @@ p {
   margin-bottom: 140px !important;
 }
 
-.projects-link {
-  position: absolute;
-  top: 60px;
-  margin-left: -100px;
+// .projects-link {
+//   position: absolute;
+//   top: 60px;
+//   margin-left: -100px;
 
-  a {
-    font-size: 36px;
-    color: $white;
-    text-decoration: none;
-  }
-}
+//   a {
+//     font-size: 36px;
+//     color: $white;
+//     text-decoration: none;
+//   }
+// }
 
 
 // General Styling
@@ -219,31 +240,32 @@ body {
 
 
 // Header 
-.site-header {
-  position: absolute;
-  display: none;
+// .site-header {
+//   //position: absolute;
+//   display: none;
 
-  .wrap {
-    max-width: 1220px;
-    padding: 0 30px;
-  }
-}
+//   .wrap {
+//     max-width: 1220px;
+//     padding: 0 30px;
+//   }
+// }
 
-.page-id-95 .site-header,
-.page-id-840 .site-header,
-.page-id-847 .site-header,
-.page-id-842 .site-header { //home
-  display: block;
-}
+
+// to keep the navigation in place
+// .page-id-95 .site-header,
+// .page-id-840 .site-header,
+// .page-id-847 .site-header,
+// .page-id-842 .site-header { //home
+//   display: block;
+//   //position: relative;
+// }
 
 
 
 // Logo
 .logo-brand img {
-  max-width: 40px !important;
+  max-width: 70px !important;
 }
-
-
 
 
 // Hero Sections
@@ -291,13 +313,13 @@ body {
 //   }
 // }
 
-.hero-home { }
+// .hero-home { }
 
 
 
-body.home {
-  background: #151515;
-}
+// body.home {
+//   background: #151515;
+// }
 
 
 .next-project {
@@ -327,15 +349,6 @@ body.home {
   h4 {
     margin-top: 10px !important;
     display: inline;
-
-    //@include link;
-
-    &::after {
-      top: 40px;
-      //left: -5px;
-      //right: 0;
-      background-color: $grey-light;
-    }
   }
 
   .img-box {
@@ -375,215 +388,10 @@ body.home {
 // Pattern
 
 .colored-section {
-  background-image: radial-gradient($grey-dots 0.5px, $primary-color 0.5px);
+  //background-image: radial-gradient($grey-dots 0.5px, $primary-color 0.5px);
   background-image: radial-gradient($grey-dots 0.5px, $white 0.5px);
   background-size: 10px 10px;
 }
 
 
 
-
-
-// Moving Shapes
-
-
-.container {
-  //overflow: hidden;
-  //display: inline-block;
-  //width: 400px;
-  //min-width: 500px;
-  width: 500px;
-  height: 500px;
-  position: relative;
-  top: 40px;
-  //top: 100px;
-  //left: 100px;
-  /*
-      transition: width 1s, height 1s;
-  
-  &:hover {
-    width: 650px;
-    height: 650px;
-  }*/
-  //background: blue;
-}
-
-.circle-solid {
-  display: block;
-  width: 25%;
-  height: 25%;
-  background: $orange;
-  border-radius: 50%;
-  position: absolute;
-  left: 40%;
-  top: 6%;
-  //z-index: -1;
-  //mix-blend-mode: multiply;
-  transform-origin: 50% 50%;
-
-  animation: circle-move 35s ease-in-out infinite;
-  
-  transition: transform 1s;
-  
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  .contact & {
-    background: $blue;
-  }
-}
-
-
-@keyframes circle-move {
-  0% {
-    left: 40%;
-    top: 6%;
-  }
-
-  30% {
-    left: 45%;
-    top: 1%;
-  }
-
-  65% {
-    left: 38%;
-    top: 10%;
-  }
-
-  100% {
-    left: 40%;
-    top: 6%;
-  }
-}
-  
-.square {
-  width: 55%;
-  height: 55%;
-  left: 20%;
-  top: 20%;
-  position: absolute;
-  background: transparent;
-  border-width: 30px;
-  border-color: $yellow;
-  border-style: solid;
-  transform-origin: 50% 50%;
-  
-  animation: square-move 35s ease-in-out infinite;
-  
-    transition: transform 1s;
-  
-  &:hover {
-    // width: 60%;
-    // height: 60%;
-    transform: scale(1.1);
-  }
-
-  .contact & {
-    border-color: $red;
-  }
-}
-
-
-@keyframes square-move {
-  0% {
-    left: 20%;
-    top: 20%;
-    border-width: 16px;
-  }
-
-  20% {
-    left: 16%;
-    top: 15%;
-  }
-
-  50% {
-    left: 25%;
-    top: 25%;
-    border-width: 20px;
-  }
-
-  100% {
-    left: 20%;
-    top: 20%;
-    border-width: 16px;
-  }
-}
-
-
-.circle-outline {
-  width: 55%;
-  height: 55%;
-  left: 2%;
-  top: 40%;
-  position: absolute;
-  background: transparent;
-  border-radius: 50%;
-  border: 3px $grey dashed;
-  animation: circle-outline-move 35s ease-in-out infinite;
-}
-
-@keyframes circle-outline-move {
-  0% {
-    left: 2%;
-    top: 40%;
-    width: 55%;
-    height: 55%;
-  }
-  
-  20% {
-    left: 8%;
-    top: 35%;
-  }
-  
-  50% {
-    width: 60%;
-    height: 60%;    
-  }
-  
-  80% {
-    left: 10%;
-    top: 45%;
-  }
-
-  100% {
-    left: 2%;
-    top: 40%;
-    width: 55%;
-    height: 55%;
-  }
-}
-
-.dash {
-  width: 40%;
-  height: 3%;
-  left: 64%;
-  top: 40%;
-  position: absolute;
-  background: $green;
-  animation: dash-move 35s ease-in-out infinite;
-
-  .contact & {
-    background: $orange;
-  }
-}
-
-@keyframes dash-move {
-  0% {
-    left: 64%;
-    top: 40%;
-    width: 35%;
-  }
-  
-  60% {
-    left: 45%;
-    top: 40%;
-    width: 40%;
-  }
-
-  100% {
-    left: 64%;
-    top: 40%;
-    width: 35%;
-  }
-}
