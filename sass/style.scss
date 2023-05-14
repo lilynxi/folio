@@ -64,6 +64,7 @@ h1, h2, h3, h4, h5, .vertical-text {
 p {
   font-family: $font;
   color: $black;
+  line-height: 1.5;
 }
 
 
@@ -82,6 +83,36 @@ h2 {
   font-size: 56px;
   line-height: 1.2;
 }
+
+.about h2 {
+  font-size: 42px;
+}
+
+.about-small h2 {
+  //font-size: 36px;
+  font-size: 32px;
+  @include padding;
+  text-align: center;
+}
+
+.skills-cards .heading-custom h2 {
+  font-size: 42px;
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   width: 100px;
+  //   height: 100px;
+  //   background: red;
+  //   border-radius: 20px;
+  //   margin-bottom: 22px;
+  // }
+}
+
+.skills-cards .heading-custom p {
+  font-size: 20px;
+  color: $grey-text;
+}
+
 
 // Hero Tagline
 .hero p,
@@ -386,12 +417,61 @@ body {
 
 
 // Pattern
-
-.colored-section {
+.pattern-section {
   //background-image: radial-gradient($grey-dots 0.5px, $primary-color 0.5px);
   background-image: radial-gradient($grey-dots 0.5px, $white 0.5px);
   background-size: 10px 10px;
 }
 
 
+.skills-section,
+.skills-cards {
+  background: $grey-background;
+}
 
+.skills-cards .wpb_wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.skills-cards .heading-custom {
+  background: $white;
+  padding: 40px;
+  flex: 1 1 400px;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-top: solid 45px $grey-background;
+    border-right: solid 45px $grey-background;
+    border-left: solid 45px transparent;
+    border-bottom: solid 45px transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.skills-cards .heading-custom h2 {
+  &::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+}
+
+//.skills-cards .heading-custom:first-child h2::before { background-color: $orange; }
+.skills-cards .heading-custom:nth-child(1) h2::before { background-color: $orange; }
+.skills-cards .heading-custom:nth-child(2) h2::before { background-color: $light-blue; }
+.skills-cards .heading-custom:nth-child(3) h2::before { background-color: $yellow; }
+.skills-cards .heading-custom:nth-child(4) h2::before { background-color: $dark-blue; }
+.skills-cards .heading-custom:nth-child(5) h2::before { background-color: $light-blue; }
+.skills-cards .heading-custom:nth-child(6) h2::before { background-color: $orange; }
