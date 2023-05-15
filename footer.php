@@ -33,11 +33,39 @@ $scroll_to_top  = kraft_footer_scroll_top();
 	
 
 	$(document).ready(function () {
+
+		var scrollPos = 0;
 		
+
 		$(".ham-trigger-wrap").click(function(){
-			//console.log('click');
+
 			$('#site-navigation').toggleClass('open');
 			$('#ham-trigger-wrap').toggleClass('open');
+
+		
+
+			// disable and enable scrolling
+			if($('#site-navigation').hasClass('open')){
+				scrollPos = $(document).scrollTop();
+				console.log("openn" + scrollPos);
+
+				$('html, body').css({
+						overflow: 'hidden',
+						height: '100%'
+				});
+
+			} else {
+
+				$('html, body').css({
+						overflow: 'auto',
+						height: 'auto'
+				});
+
+				$(document).scrollTop(scrollPos);
+				console.log('closee'+scrollPos);
+				
+			}
+
 		});
  	});
 </script>
