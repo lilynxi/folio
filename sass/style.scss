@@ -56,7 +56,7 @@ body {
   font-family: $font;
 }
 
-h1, h2, h3, h4, h5, .vertical-text {
+h1, h2, h3, h4, h5 {
   font-family: $font;
   font-weight: $bold;
   color: $black !important;
@@ -89,6 +89,11 @@ h2 {
   }
 }
 
+h3 {
+  font-weight: $medium;
+  font-size: 42px;
+}
+
 .about h2 {
   font-size: 42px;
 }
@@ -100,17 +105,10 @@ h2 {
   text-align: center;
 }
 
-.skills-cards .heading-custom h2 {
+.skills-cards .heading-custom h3 {
   font-size: 42px;
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   width: 100px;
-  //   height: 100px;
-  //   background: red;
-  //   border-radius: 20px;
-  //   margin-bottom: 22px;
-  // }
+  font-weight: $medium;
+  line-height: 1.2;
 }
 
 .skills-cards .heading-custom p {
@@ -118,6 +116,12 @@ h2 {
   color: $grey-text;
 }
 
+.values-section {
+  color: $white;
+}
+.values-section h2 {
+  text-align: center;
+}
 
 // Hero Tagline
 .hero p,
@@ -172,6 +176,10 @@ h2 {
 }
 
 
+.main-navigation {
+  background: $black !important;
+  //width: 100% !important;
+}
 
 #site-navigation {
   left: 0;
@@ -197,8 +205,11 @@ h2 {
     margin-right: 0 !important;
     li {
       margin-bottom: 0 !important;
+      padding: 2px 0;
       a {
-        font-size: 56px !important;
+        font-size: 52px !important;
+        // padding: 2px 0;
+        // display: block;
       }
     }
   }
@@ -206,8 +217,8 @@ h2 {
   &::before {
     content: '';
     display: block;
-    width: 260px;
-    height: 260px;
+    width: 250px;
+    height: 250px;
     background: url('img/menu-img.png') no-repeat center center;
     background-size: 100% auto;
   }
@@ -222,24 +233,14 @@ h2 {
 .site-header.hamburger-side {
   background-color: transparent !important;
   box-shadow: none;
+
+  &.is-stuck {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
 }
 
-.main-navigation {
-  background: $black !important;
-  //width: 100% !important;
-}
-.main-navigation a {
-  //background: red;
-  // font-size: 40px !important;
-  // font-weight: $medium !important;
-  // font-family: $font !important;
-  // text-transform: none !important;
-  // color: $black !important;
 
-  // .home & {
-  //   color: $white !important;
-  // }
-}
 
 
 
@@ -256,7 +257,7 @@ h2 {
 
 
 
-// Content Paragraph
+// Project Content Paragraph
 .content-section p,
 .content-section h3 {
   @include padding;
@@ -317,7 +318,8 @@ body {
 
 // Content
 .row-container {
-  max-width: 1220px; // orig: 1170px
+  //max-width: 1220px; // orig: 1170px
+  max-width: 1320px;
 }
 
 
@@ -381,28 +383,6 @@ body {
 }
 
 
-// .hero-home {
-//   height: 80vh;
-//   min-height: 460px !important;
-//   padding-bottom: 150px;
-
-//   h1 {
-//     color: $black !important;
-//   }
-
-//   a {
-//     @include link;
-//   }
-// }
-
-// .hero-home { }
-
-
-
-// body.home {
-//   background: #151515;
-// }
-
 
 .next-project {
   height: 70vh;
@@ -423,7 +403,7 @@ body {
 
 
 
-// Projects Section Homepage
+// Projects Section
 
 .projects-section {
   //margin-top: -150px;
@@ -453,8 +433,7 @@ body {
 
 
 
-// Content Section
-
+// Project Content Section
 .content-section {
   a {
     @include link;
@@ -475,6 +454,46 @@ body {
 }
 
 
+// Experience Section
+.experience-section {
+  p, span {
+    font-size: 24px;
+  }
+  p {
+    margin-bottom: 4px;
+    &.active {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: $orange;
+        border-radius: 50%;
+        margin-right: 6px;
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+  h3 {
+    border-bottom: 2px solid $black;
+  }
+  h4{
+    font-weight: $medium;
+    font-size: 36px;
+    margin-bottom: 0;
+  }
+  .list-item {
+    border-bottom: thin solid $grey-light;
+    //background: $grey-background;
+    padding: 30px 0;
+  }
+  .wpb_raw_code {
+    margin-bottom: 0px;
+  }
+}
+
+// Skills
 .skills-section,
 .skills-cards {
   background: $grey-background;
@@ -482,14 +501,14 @@ body {
 
 .skills-cards .wpb_wrapper {
   display: flex;
-  gap: 30px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .skills-cards .heading-custom {
   background: $white;
   padding: 40px;
-  flex: 1 1 400px;
+  flex: 1 1 440px;
   position: relative;
 
   &::after {
@@ -507,22 +526,68 @@ body {
   }
 }
 
-.skills-cards .heading-custom h2 {
+.skills-cards .heading-custom h3 {
   &::before {
     content: '';
     display: block;
     width: 100px;
     height: 100px;
-    background: red;
+    background: url('img/about-illus/01.png') no-repeat center center;
+    background-color: $orange;
+    background-size: 70% 70%;
     border-radius: 20px;
     margin-bottom: 22px;
   }
 }
 
-//.skills-cards .heading-custom:first-child h2::before { background-color: $orange; }
-.skills-cards .heading-custom:nth-child(1) h2::before { background-color: $orange; }
-.skills-cards .heading-custom:nth-child(2) h2::before { background-color: $light-blue; }
-.skills-cards .heading-custom:nth-child(3) h2::before { background-color: $yellow; }
-.skills-cards .heading-custom:nth-child(4) h2::before { background-color: $dark-blue; }
-.skills-cards .heading-custom:nth-child(5) h2::before { background-color: $light-blue; }
-.skills-cards .heading-custom:nth-child(6) h2::before { background-color: $orange; }
+//.skills-cards .heading-custom:first-child h3::before { background-color: $orange; }
+.skills-cards .heading-custom:nth-child(1) h3::before {
+  background: url('img/about-illus/01.png') no-repeat center center;
+  background-color: $orange;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(2) h3::before {
+  background: url('img/about-illus/02.png') no-repeat center center;
+  background-color: $light-blue;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(3) h3::before {
+  background: url('img/about-illus/03.png') no-repeat center center;
+  background-color: $yellow;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(4) h3::before {
+  background: url('img/about-illus/04.png') no-repeat center center;
+  background-color: $dark-blue;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(5) h3::before {
+  background: url('img/about-illus/05.png') no-repeat center center;
+  background-color: $light-blue;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(6) h3::before {
+  background: url('img/about-illus/06.png') no-repeat center center;
+  background-color: $orange;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(7) h3::before {
+  background: url('img/about-illus/07.png') no-repeat center center;
+  background-color: $yellow;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(8) h3::before {
+  background: url('img/about-illus/08.png') no-repeat center center;
+  background-color: $light-blue;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(9) h3::before {
+  background: url('img/about-illus/02.png') no-repeat center center;
+  background-color: $orange;
+  background-size: 70% 70%;
+}
+.skills-cards .heading-custom:nth-child(10) h3::before {
+  background: url('img/about-illus/01.png') no-repeat center center;
+  background-color: $dark-blue;
+  background-size: 70% 70%;
+}
