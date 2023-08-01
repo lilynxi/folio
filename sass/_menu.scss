@@ -1,0 +1,107 @@
+
+
+
+// Menu
+.ham-trigger-wrap {
+  z-index: 100;
+  margin: 0 auto;
+
+  &.open .ham-trigger span {
+    &:before, &:after {
+      background-color: $white !important;
+    }
+  }
+
+  .ham-trigger {
+    transform: translateY(0px) !important;
+    span {
+      background-color: transparent !important;
+      width: 60px !important;
+      height: 3px !important;
+
+      &::before {
+        width: 60px !important;
+        top: -5px !important;
+        height: 3px !important;
+      }
+      &::after {
+        width: 60px !important;
+        top: 5px !important;
+        height: 3px !important;
+      }
+    }
+  }
+
+  &.open {
+    .ham-trigger span:before { transform: translateY(5px) rotateZ(-45deg) !important; }
+    .ham-trigger span:after { transform: translateY(-5px) rotateZ(45deg) !important; }
+  }
+}
+
+
+.main-navigation {
+  background: $black !important;
+  //width: 100% !important;
+}
+
+#site-branding {
+  display: none;
+}
+
+#site-navigation {
+  left: 0;
+  opacity: 0;
+  width: 100% !important;
+  display: none;
+  transition: all ease-in-out 300ms;
+
+
+  &.open {
+    left: 0;
+    opacity: 100%;
+    width: 100% !important;   
+    display: flex !important;
+    flex-wrap: wrap;
+    padding: 50px !important;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .menu {
+    margin-right: 0 !important;
+    li {
+      margin-bottom: 0 !important;
+      padding: 2px 0;
+      a {
+        font-size: 52px !important;
+        // padding: 2px 0;
+        // display: block;
+      }
+    }
+  }
+
+  #hamburger-menu-close-trigger { display: none !important; }
+}
+
+.page-click-capture {
+  display: none !important;
+}
+
+.site-header.hamburger-side {
+  background-color: transparent !important;
+  box-shadow: none;
+  padding-top: 60px !important;
+
+  &.is-stuck {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+// overwrite style for mobile
+@media (max-width: 767px) {
+  #masthead.site-header.standard, #masthead.site-header.hamburger-side {
+    padding-top: 60px !important;
+  }
+}
