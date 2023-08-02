@@ -74,9 +74,21 @@
       margin-bottom: 0 !important;
       padding: 2px 0;
       a {
-        font-size: 52px !important;
+        font-size: 94px !important;
+        font-family: $archivo-black !important;
+        font-weight: $regular !important;
+        display: block;
+        text-align: center;
         // padding: 2px 0;
         // display: block;
+        color: transparent !important;
+        -webkit-text-stroke: 2px $white;
+
+        &:hover {
+          // color: transparent !important;
+          // -webkit-text-stroke: 2px $white;
+          color: $white !important;
+        }
       }
     }
   }

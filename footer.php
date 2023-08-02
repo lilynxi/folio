@@ -41,13 +41,14 @@ $scroll_to_top  = kraft_footer_scroll_top();
 
 			$('#site-navigation').toggleClass('open');
 			$('#ham-trigger-wrap').toggleClass('open');
+			$('.rotated').toggleClass('open');
 
 		
 
 			// disable and enable scrolling
 			if($('#site-navigation').hasClass('open')){
 				scrollPos = $(document).scrollTop();
-				console.log("openn" + scrollPos);
+				//console.log("openn" + scrollPos);
 
 				$('html, body').css({
 						overflow: 'hidden',
