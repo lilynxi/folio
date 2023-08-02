@@ -158,7 +158,7 @@ p {
 
 // Rotated Text on the Side
 .side-text-section {
-  background: green;
+  //background: green;
   height: 100%;
   position: fixed;
   top: 0;
@@ -210,7 +210,7 @@ h2 {
 
 // Experience Section
 .experience-section {
-  margin-bottom: 200px;
+  //margin-bottom: 200px;
   margin-top: 60px;
   background: orange;
 
@@ -257,55 +257,117 @@ h2 {
 }
 
 
+// Methods Section
+.methods-section {
+  background: orange;
+  margin-top: 60px;
+}
+
+.carousel-wrapper {
+  .swiper-wrapper {
+    display: flex;
+    align-items: center !important;
+    padding-top: 10px;
+    padding-left: 90px;
+
+    .swiper-slide {
+      width: 46% !important;
+      //margin-bottom: 0;
+
+      .single-item-wrapper {
+        background: yellow;
+        padding: 40px;
+        border: thin solid grey;
+
+        .author-bio { // title
+          text-align: left;
+          font-size: 56px;
+          font-family: $archivo;
+          font-weight: $regular;
+          font-style: italic;
+          color: $black;
+          line-height: 1.2;
+          
+        }
+        .item-content-wrapper { // text
+          background-color: transparent;
+          padding: 0;
+          text-align: right;
+
+          p {
+            font-size: 22px;
+            font-family: $archivo;
+            font-weight: $regular;
+            font-style: normal;
+            color: $black;
+            line-height: 1.5;
+            text-align: left;
+          }
+
+          &::after {
+            content:'1';
+            font-family: $archivo-black;
+            font-weight: $regular;
+            font-size: 120px;
+            line-height: 1;
+            color: $black;
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+  .slide-item:nth-child(2) .item-content-wrapper::after { content:'2'; }
+  .slide-item:nth-child(3) .item-content-wrapper::after { content:'3'; }
+  .slide-item:nth-child(4) .item-content-wrapper::after { content:'4'; }
+  .slide-item:nth-child(5) .item-content-wrapper::after { content:'5'; }
+  .slide-item:nth-child(6) .item-content-wrapper::after { content:'6'; }
+  .slide-item:nth-child(7) .item-content-wrapper::after { content:'7'; }
+  .slide-item:nth-child(8) .item-content-wrapper::after { content:'8'; }
+  .slide-item:nth-child(9) .item-content-wrapper::after { content:'9'; }
+
+  }// swiper wrapper
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      border-radius: 0;
+      width: 30%;
+    }
+    .swiper-pagination-bullet:hover,
+    .swiper-pagination-bullet-active {
+      background: $pink;
+    }
+  }
+}
+
+
+// Gradient Section
+.gradient-section {
+  background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: -10;
+}
+
+@keyframes gradient {
+  0% {background-position: 0%}
+  100% {background-position: 100%}
+}
 
 
 
 
 
 
-// Gradient Animation
-// .hero-section {
-//   background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
-//   background-size: 600% 100%;
-//   animation: gradient 16s linear infinite;
-//   animation-direction: alternate;
-//   max-height: 80vh !important;
-//   min-height: 80vh !important;
 
-//   > div {
-//     //min-height: 700px;
-//     // max-width: 1400px;
-//     // margin: 0 auto;
-//   }
-// }
-
-// @keyframes gradient {
-//   0% {background-position: 0%}
-//   100% {background-position: 100%}
-// }
-
-
-
-
-// // special rules for home
-// .hero-section-home {
-//   max-height: 100vh !important;
-//   min-height: 100vh !important;
-
-//   .heading-custom {
-//     transform: rotate(-10deg);
-//   }
-
-//   h1,
-//   .heading-custom .para {
-//     text-align: center;
-//     font-size: 22vw;
-//   }
-
-//   .heading-custom .para {
-//     padding-left: 3vw;
-//   }
-// }
 
 
 
@@ -332,39 +394,6 @@ h2 {
 //     background-repeat: no-repeat;
 //     background-position: left, right;
 //   }
-// }
-
-
-
-
-// // home introduction with text-animation
-
-// .home-introduction {
-//   position: absolute;
-//   right: 1vw;
-//   //bottom: -1vh;
-//   bottom: 0;
-//   padding-left: 0;
-
-//   .wpb_wrapper {
-//     display: flex;
-//     align-items: center;
-//   }
-// }
-
-// .home-introduction-text {
-//   margin-bottom:0 !important;
-//   text-align: right;
-//   font-style: italic;
-//   line-height: 1.5;
-//   font-weight: 300;
-//   font-size: 20px;
-// }
-
-// .home-introduction-animation {
-//   transform: scale(0.7);
-//   margin-bottom: 0 !important;
-//   //margin-left: -10px;
 // }
 
 
