@@ -51,6 +51,10 @@ p {
 .hero-title-section {
   margin-top: 100px;
 
+  &:nth-child(1){
+    margin-top: 240px;
+  }
+
   h1,
   .heading-custom .para {
     font-family: $archivo-black;
@@ -69,7 +73,7 @@ p {
     transform: rotate(180deg);
     //text-align: right;
   }
-  background: yellow;
+  //background: yellow;
 }
 
 .hero-about {
@@ -203,7 +207,7 @@ h2 {
   color: $black;
   line-height: 1.1;
   margin-top: 100px;
-  background-color: orange;
+  //background-color: orange;
 }
 
 
@@ -259,31 +263,76 @@ h2 {
 
 // Methods Section
 .methods-section {
-  background: orange;
-  margin-top: 60px;
+  //background: orange;
+  background: white;
+  //margin-top: 60px;
 }
 
 .carousel-wrapper {
   .swiper-wrapper {
     display: flex;
     align-items: center !important;
-    padding-top: 10px;
+    padding-top: 40px;
+    padding-bottom: 80px;
     padding-left: 90px;
+    cursor: grab;
+
+
+
+// -----------
+// border with edge
+
+    // .swiper-slide,
+    // .single-item-wrapper{
+    //     width: 46%;
+    //     //height: 300px;
+    //     display: block;
+    //     //position: relative;    
+    //     color: #e74c3c;
+    //     overflow: hidden;
+    //     padding: 2px;
+    // }
+    // .single-item-wrapper {    
+    //     width: 100%;
+    //     height: 100%; 
+    // }
+    // .swiper-slide:before,
+    // .single-item-wrapper:before{
+    //     content:'';
+    //     position: absolute; right: -500%;
+    //     width: 1100%;
+    //     height: 1100%;
+    //     background: #c00;     
+    //     z-index: -1;
+    //     top: 20px; 
+    //     transform-origin: 54% top;
+    //     transform: rotate(45deg); 
+    // }
+    // .single-item-wrapper:before{    
+    //     top: 19px;
+    //     background: #fff;    
+    // }
+    
+// -----------
 
     .swiper-slide {
-      width: 46% !important;
+      //width: 46% !important;
       //margin-bottom: 0;
+      margin: 0;
+      padding: 0;
 
       .single-item-wrapper {
-        background: yellow;
-        padding: 40px;
-        border: thin solid grey;
+        //background: yellow;
+        //padding: 40px;
+        //border: 1px solid grey;
+        border-right: thin solid grey;
+        padding: 0 60px;
 
         .author-bio { // title
           text-align: left;
           font-size: 56px;
           font-family: $archivo;
-          font-weight: $regular;
+          font-weight: $bold;
           font-style: italic;
           color: $black;
           line-height: 1.2;
@@ -308,9 +357,11 @@ h2 {
             content:'1';
             font-family: $archivo-black;
             font-weight: $regular;
-            font-size: 120px;
-            line-height: 1;
+            font-size: 110px;
+            line-height: .5;
             color: $black;
+            opacity: 0.1;
+            margin-top: -20px;
           }
 
           &::before {
@@ -333,7 +384,9 @@ h2 {
   .swiper-pagination {
     .swiper-pagination-bullet {
       border-radius: 0;
-      width: 30%;
+      height: 6px;
+      width: 24%;
+      background: rgba($black,0.3);
     }
     .swiper-pagination-bullet:hover,
     .swiper-pagination-bullet-active {
@@ -350,7 +403,7 @@ h2 {
   animation: gradient 16s linear infinite;
   animation-direction: alternate;
   position: fixed;
-  top: 10px;
+  top: 0;
   left: 10px;
   right: 10px;
   bottom: 10px;
@@ -363,6 +416,62 @@ h2 {
 }
 
 
+
+
+// Projects Section
+.projects-section {
+  margin-top: 60px;
+
+  .img-box {
+    position: relative;
+    margin-bottom: 120px;
+    width: 68%;
+    float: left;
+
+    .box-content {
+      background: white;
+      margin-top: -60px;
+      padding: 0 20px;
+      display: inline-block;
+      position: absolute;
+      right: -60px;
+
+      h4 {
+        font-size: 72px !important;
+        line-height: 1;
+        font-family: $archivo;
+        font-weight: $bold;
+        font-style: italic;
+      }
+      p {
+        line-height: 1;
+        margin: 0;
+        font-family: $archivo;
+      }
+    }
+
+    &:nth-child(even){
+      float: right;
+
+      .box-content {
+        left: -60px;;
+        right: auto;
+      } 
+    }
+  }
+
+  .button {
+    a {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 110%;
+      color: transparent;
+      background: transparent;
+      border: none;
+    }
+  }
+}
 
 
 
