@@ -33,6 +33,11 @@ p {
   color: $black;
 }
 
+.wpb_raw_code {
+  margin: 0 !important; // remove default margin from html content
+}
+
+
 // Selections
 ::selection {
   color: $white;
@@ -51,9 +56,7 @@ p {
 .hero-title-section {
   margin-top: 100px;
 
-  &:nth-child(1){
-    margin-top: 240px;
-  }
+
 
   h1,
   .heading-custom .para {
@@ -97,10 +100,10 @@ p {
   margin-top: 60px;
   font-size: 28px;
   line-height: 1.6;
-  background: yellow;
+  background: rgba(yellow,0.4);
 
   .hero-text {
-    background: orange;
+    background: rgba(orange,0.4);
     margin-bottom: 0;
   }
 }
@@ -117,6 +120,7 @@ p {
   }
 }
 .hero-text-contact {
+  position: relative; // for placement of circles
   .hero-text {
     width: 68%;
     float: right;
@@ -149,10 +153,24 @@ p {
         width: 100px;
         height: 100px;
         display: block;
-        background: grey;
+        background: url('img/message-icon.png') no-repeat center center;
+        background-size: 100% auto;  
         position: absolute;
         top: 50px;
         left: 50px;
+      }
+
+      &.message-icon::after {
+        background: url('img/message-icon.png') no-repeat center center;
+        background-size: 100% auto;  
+      }
+      &.arrow-down-icon::after {
+        background: url('img/arrow-down-icon.png') no-repeat center center;
+        background-size: 100% auto;  
+      }
+      &.arrow-right-icon::after {
+        background: url('img/arrow-right-icon.png') no-repeat center center;
+        background-size: 100% auto;  
       }
     }
 
@@ -216,7 +234,7 @@ h2 {
 .experience-section {
   //margin-bottom: 200px;
   margin-top: 60px;
-  background: orange;
+  //background: orange;
 
   p, span {
     font-size: 24px;
@@ -274,7 +292,7 @@ h2 {
     align-items: center !important;
     padding-top: 40px;
     padding-bottom: 80px;
-    padding-left: 90px;
+    padding-left: 40px;
     cursor: grab;
 
 
