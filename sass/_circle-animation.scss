@@ -1,7 +1,8 @@
 @import 'variables';
 
 @mixin polka-dots {
-  background-image: radial-gradient($grey-line-bg 0.5px, $grey-bg 0.5px);
+  //background-image: radial-gradient($grey-line-bg 0.5px, $grey-bg 0.5px);
+  background-image: radial-gradient($grey-line-bg 0.5px, $white 0.5px);
   //background-size: 10px 10px;
   background-size: 8px 8px;
 }
