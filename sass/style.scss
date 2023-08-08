@@ -60,7 +60,7 @@ p {
   h1,
   .heading-custom .para {
     @include font-title;
-    font-size: 220px;
+    font-size: 240px;
     color: $black;
     line-height: .9;
     margin-bottom: 0;
@@ -389,7 +389,7 @@ h2 {
     position: relative;
     margin-bottom: 120px;
     width: 68%;
-    float: left;
+    float: right;
 
     .box-content {
       //background: white;
@@ -398,7 +398,7 @@ h2 {
       padding: 0 20px;
       display: inline-block;
       position: absolute;
-      right: -60px;
+      left: -60px;
 
       h4 {
         //font-size: 72px !important;
@@ -424,11 +424,11 @@ h2 {
     }
 
     &:nth-child(even){
-      float: right;
+      float: left;
 
       .box-content {
-        left: -60px;;
-        right: auto;
+        right: -60px;;
+        left: auto;
       } 
     }
   }
