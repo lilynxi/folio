@@ -105,31 +105,28 @@ p {
   }
 }
 
-.hero-text-about {
-  position: relative; // for placement of circles
-  overflow: visible;
-  .hero-text {
-    width: 68%;
-    float: right;
-  }
-}
+.hero-text-about,
 .hero-text-work {
   position: relative; // for placement of circles
-  .hero-text {
-    width: 68%;
-    foat: right;
+  //overflow: visible;
+  .hero-text,
+  .hero-text-image {
+    width: 60%;
+    float: right;
+    margin-right: 8%;
   }
 }
-.hero-text-contact {
+
+.hero-text-contact,
+.hero-text-home  {
   position: relative; // for placement of circles
   .hero-text {
-    width: 68%;
+    width: 60%;
     float: right;
+    margin-right: 8%;
   }
 }
-.hero-text-home {
 
-}
 
 
 
@@ -223,7 +220,7 @@ h2 {
   @include font-title;
   
   font-size: 80px;
-  color: $black;
+  color: $black !important;
   line-height: 1.1;
   margin-top: 100px;
   //background-color: orange;
@@ -284,9 +281,7 @@ h2 {
 
 // Methods Section
 .methods-section {
-  //background: orange;
-  //background: $white;
-  //margin-top: 60px;
+  background: $white;
 }
 
 .carousel-wrapper {
@@ -295,7 +290,7 @@ h2 {
     align-items: center !important;
     padding-top: 40px;
     padding-bottom: 80px;
-    padding-left: 40px;
+    //padding-left: 30px;
     cursor: grab;
 
 
@@ -367,18 +362,18 @@ h2 {
   .slide-item:nth-child(9) .item-content-wrapper::after { content:'9'; }
 
   }// swiper wrapper
-  .swiper-pagination {
-    .swiper-pagination-bullet {
-      border-radius: 0;
-      height: 6px;
-      width: 24%;
-      background: rgba($black,0.3);
-    }
-    .swiper-pagination-bullet:hover,
-    .swiper-pagination-bullet-active {
-      background: $accent;
-    }
-  }
+  // .swiper-pagination {
+  //   .swiper-pagination-bullet {
+  //     border-radius: 0;
+  //     height: 6px;
+  //     width: 24%;
+  //     background: rgba($black,0.3);
+  //   }
+  //   .swiper-pagination-bullet:hover,
+  //   .swiper-pagination-bullet-active {
+  //     background: $accent;
+  //   }
+  // }
 }
 
 
@@ -397,7 +392,8 @@ h2 {
     float: left;
 
     .box-content {
-      background: white;
+      //background: white;
+      @include polka-dots;
       margin-top: -60px;
       padding: 0 20px;
       display: inline-block;
@@ -405,18 +401,25 @@ h2 {
       right: -60px;
 
       h4 {
-        font-size: 72px !important;
-        line-height: 1;
-        // font-family: $archivo;
-        // font-weight: $bold;
-        // font-style: italic;
+        //font-size: 72px !important;
         @include font-title;
+        font-size: 72px !important; 
+        line-height: 1;
+        -webkit-text-stroke: 2px $black;
+        color: transparent !important;
       }
       p {
         line-height: 1;
         margin: 0;
         //font-family: $archivo;
         @include font-regular;
+      }
+    }
+    &:hover {
+      transform: scale(1.02);
+      transition: transform ease-in-out 300ms;
+      h4 {
+        color: $black !important;
       }
     }
 

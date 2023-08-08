@@ -7,25 +7,25 @@
 }
 
 @mixin diagonal-lines {
-  background-color: rgba(#fff,0.1);
+  background-color: rgba($grey-bg,0.1);
   opacity: 0.8;
   background-size: 15px 15px;
-  background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 2px, rgba(#fff,0.1) 0, rgba(#fff,0.1) 50%);
+  background-image: repeating-linear-gradient(45deg, $grey-line-bg 0, $grey-line-bg 2px, rgba($grey-bg,0.1) 0, rgba($grey-bg,0.1) 50%);
 }
 
-@mixin circles {
-background-color: #e5e5f7;
-opacity: 0.8;
-background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
-background-blend-mode: multiply;
-}
+// @mixin circles {
+// background-color: #e5e5f7;
+// opacity: 0.8;
+// background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
+// background-blend-mode: multiply;
+// }
 
-@mixin triangles {
-background-color: #e5e5f7;
-opacity: 0.8;
-background-image: linear-gradient(-45deg, #e5e5f7, #e5e5f7 50%, #444cf7 50%, #444cf7);
-background-size: 10px 10px;
-}
+// @mixin triangles {
+// background-color: #e5e5f7;
+// opacity: 0.8;
+// background-image: linear-gradient(-45deg, $grey-bg, $grey-bg 50%, $grey-line-bg 50%, $grey-line-bg);
+// background-size: 10px 10px;
+// }
 
 
 body {
@@ -35,8 +35,10 @@ body {
 
 
 // Circles for Hero Text Contact
+.hero-text-home .circle-wrapper,
 .hero-text-contact .circle-wrapper,
-.hero-text-about .circle-wrapper {
+.hero-text-about .circle-wrapper,
+.hero-text-work .circle-wrapper {
   background: rgba(grey, 0.1);
   width: 50%;
   position: absolute;
@@ -47,8 +49,8 @@ body {
 }
 
 .hero-text-about .circle-wrapper {
-  left: auto;
-  right: 0;
+  // left: auto;
+  // right: 0;
 }
 
 .circle {
@@ -68,7 +70,8 @@ body {
   }
 }
 
-.hero-text-contact .circle-wrapper {
+.hero-text-contact .circle-wrapper,
+.hero-text-home .circle-wrapper {
   .circle-1 {
     width: 200px;
     height: 200px;
@@ -85,7 +88,8 @@ body {
   }
 }
 
-.hero-text-about .circle-wrapper {
+.hero-text-about .circle-wrapper,
+.hero-text-work .circle-wrapper {
   .circle-1 {
     width: 20px;
     height: 20px;
@@ -100,15 +104,15 @@ body {
     border: 3px solid $accent;
     animation: circle-2-move 35s ease-in-out infinite;  
   }
-  .circle-3 {
-    width: 360px;
-    height: 360px;
-    background: url('img/portrait.png') no-repeat center center;
-    background-size: 100% auto;
-    left: 60%;
-    top: 40%;
-    animation: circle-3-move 35s ease-in-out infinite;  
-  }
+  // .circle-3 {
+  //   width: 360px;
+  //   height: 360px;
+  //   background: url('img/portrait.png') no-repeat center center;
+  //   background-size: 100% auto;
+  //   left: 60%;
+  //   top: 40%;
+  //   animation: circle-3-move 35s ease-in-out infinite;  
+  // }
 }
 
 
