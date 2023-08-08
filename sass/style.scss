@@ -15,39 +15,40 @@ Text Domain: kraft
 
 
 //@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@100;300&display=swap');
 @import 'variables';
+@import 'fonts';
 @import 'menu';
 @import 'circle-animation';
 
 
 
 body {
-  font-family: $archivo;
-  font-weight: $regular;
+  @include font-regular;
   color: $black;
   margin-top: 0 !important;
 }
 
 p {
   color: $black;
+  @include font-regular;
 }
 
 .wpb_raw_code {
-  margin: 0 !important; // remove default margin from html content
+  margin: 0 !important; // remove default margin from html raw code containers
 }
 
 
 // Selections
 ::selection {
   color: $white;
-  background: $pink;
+  background: $accent;
 }
 
 .heading-custom .para::selection {
   color: transparent;
   -webkit-text-stroke: 3px $white;
-  background: $pink;
+  background: $accent;
 }
 
 
@@ -56,18 +57,14 @@ p {
 .hero-title-section {
   margin-top: 100px;
 
-
-
   h1,
   .heading-custom .para {
-    font-family: $archivo-black;
-    font-weight: $regular;
+    @include font-title;
     font-size: 220px;
     color: $black;
     line-height: .9;
     margin-bottom: 0;
     text-align: left;
-    //transform: scale(1.1,1);
   }
 
   .heading-custom .para {
@@ -85,8 +82,8 @@ p {
   }
 }
 .hero-work {
-  h1, .heading-custom .para { 
-    text-align: center;
+  .heading-custom .para { 
+    text-align: right;
   }
 }
 .hero-contact { }
@@ -98,25 +95,29 @@ p {
 // Hero Text Section
 .hero-text-section {
   margin-top: 60px;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.6;
   background: rgba(yellow,0.4);
 
   .hero-text {
-    background: rgba(orange,0.4);
+    //background: rgba(orange,0.4);
     margin-bottom: 0;
   }
 }
 
 .hero-text-about {
+  position: relative; // for placement of circles
+  overflow: visible;
   .hero-text {
     width: 68%;
-    float: left;
+    float: right;
   }
 }
 .hero-text-work {
+  position: relative; // for placement of circles
   .hero-text {
-    width: 100%;
+    width: 68%;
+    foat: right;
   }
 }
 .hero-text-contact {
@@ -134,17 +135,17 @@ p {
 
 // Round Text Section & Link
 .round-text-section {
-  background: yellow;
+  //background: yellow;
   margin-top: 60px;
 
   .round-text-animation {
-    background: orange;
+    //background: orange;
     text-align: center;
     margin-bottom: 0;
 
     .text-animation-link {
       display: inline-block;
-      background-color: red;
+      //background-color: red;
       transform: scale(0.8);
       position: relative;
 
@@ -219,9 +220,9 @@ p {
 
 // Content Title
 h2 {
-  font-family: $archivo-black;
-  font-weight: $regular;
-  font-size: 90px;
+  @include font-title;
+  
+  font-size: 80px;
   color: $black;
   line-height: 1.1;
   margin-top: 100px;
@@ -248,7 +249,7 @@ h2 {
         display: inline-block;
         width: 22px;
         height: 22px;
-        background: $pink;
+        background: $accent;
         border-radius: 50%;
         margin-right: 8px;
         position: relative;
@@ -261,15 +262,17 @@ h2 {
     border-bottom: 2px solid $black;
     margin-bottom: 0;
     padding: 8px 0;
+    @include font-regular;
   }
 
   h4{
-    font-size: 36px;
+    font-size: 53px;
     margin-bottom: 0;
+    @include font-thin;
   }
 
   .list-item {
-    border-bottom: thin solid grey;
+    border-bottom: thin solid $grey-line;
     padding: 30px 0;
   }
 
@@ -282,7 +285,7 @@ h2 {
 // Methods Section
 .methods-section {
   //background: orange;
-  background: white;
+  //background: $white;
   //margin-top: 60px;
 }
 
@@ -297,42 +300,6 @@ h2 {
 
 
 
-// -----------
-// border with edge
-
-    // .swiper-slide,
-    // .single-item-wrapper{
-    //     width: 46%;
-    //     //height: 300px;
-    //     display: block;
-    //     //position: relative;    
-    //     color: #e74c3c;
-    //     overflow: hidden;
-    //     padding: 2px;
-    // }
-    // .single-item-wrapper {    
-    //     width: 100%;
-    //     height: 100%; 
-    // }
-    // .swiper-slide:before,
-    // .single-item-wrapper:before{
-    //     content:'';
-    //     position: absolute; right: -500%;
-    //     width: 1100%;
-    //     height: 1100%;
-    //     background: #c00;     
-    //     z-index: -1;
-    //     top: 20px; 
-    //     transform-origin: 54% top;
-    //     transform: rotate(45deg); 
-    // }
-    // .single-item-wrapper:before{    
-    //     top: 19px;
-    //     background: #fff;    
-    // }
-    
-// -----------
-
     .swiper-slide {
       //width: 46% !important;
       //margin-bottom: 0;
@@ -343,17 +310,18 @@ h2 {
         //background: yellow;
         //padding: 40px;
         //border: 1px solid grey;
-        border-right: thin solid grey;
+        border-right: thin solid $grey-line;
         padding: 0 60px;
 
         .author-bio { // title
           text-align: left;
-          font-size: 56px;
-          font-family: $archivo;
-          font-weight: $bold;
-          font-style: italic;
+          font-size: 53px;
+          // font-family: $archivo;
+          // font-weight: $bold;
+          // font-style: italic;
+          @include font-thin;
           color: $black;
-          line-height: 1.2;
+          //line-height: 1.2;
           
         }
         .item-content-wrapper { // text
@@ -363,8 +331,7 @@ h2 {
 
           p {
             font-size: 22px;
-            font-family: $archivo;
-            font-weight: $regular;
+            @include font-regular;
             font-style: normal;
             color: $black;
             line-height: 1.5;
@@ -373,9 +340,10 @@ h2 {
 
           &::after {
             content:'1';
-            font-family: $archivo-black;
-            font-weight: $regular;
-            font-size: 110px;
+            //font-family: $archivo-black;
+            //font-weight: $regular;
+            @include font-thin;
+            font-size: 53px;
             line-height: .5;
             color: $black;
             opacity: 0.1;
@@ -408,30 +376,12 @@ h2 {
     }
     .swiper-pagination-bullet:hover,
     .swiper-pagination-bullet-active {
-      background: $pink;
+      background: $accent;
     }
   }
 }
 
 
-// Gradient Section
-.gradient-section {
-  background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
-  background-size: 600% 100%;
-  animation: gradient 16s linear infinite;
-  animation-direction: alternate;
-  position: fixed;
-  top: 0;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  z-index: -10;
-}
-
-@keyframes gradient {
-  0% {background-position: 0%}
-  100% {background-position: 100%}
-}
 
 
 
@@ -457,14 +407,16 @@ h2 {
       h4 {
         font-size: 72px !important;
         line-height: 1;
-        font-family: $archivo;
-        font-weight: $bold;
-        font-style: italic;
+        // font-family: $archivo;
+        // font-weight: $bold;
+        // font-style: italic;
+        @include font-title;
       }
       p {
         line-height: 1;
         margin: 0;
-        font-family: $archivo;
+        //font-family: $archivo;
+        @include font-regular;
       }
     }
 
@@ -490,6 +442,43 @@ h2 {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// // Gradient Section
+// .gradient-section {
+//   //background: url(https://static.vecteezy.com/system/resources/thumbnails/008/854/270/original/abstract-colorful-gradient-animation-background-free-video.jpg);
+//   background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
+//   background-size: 600% 100%;
+//   animation: gradient 16s linear infinite;
+//   animation-direction: alternate;
+//   position: fixed;
+//   top: 0;
+//   left: 10px;
+//   right: 10px;
+//   bottom: 10px;
+//   z-index: -10;
+// }
+
+// @keyframes gradient {
+//   0% {background-position: 0%}
+//   100% {background-position: 100%}
+// }
+
+
+
+
+
+
 
 
 

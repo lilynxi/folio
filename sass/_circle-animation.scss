@@ -1,8 +1,9 @@
 @import 'variables';
 
 @mixin polka-dots {
-  background-image: radial-gradient(#ccc 0.5px, white 0.5px);
-  background-size: 10px 10px;
+  background-image: radial-gradient($grey-line-bg 0.5px, $grey-bg 0.5px);
+  //background-size: 10px 10px;
+  background-size: 8px 8px;
 }
 
 @mixin diagonal-lines {
@@ -28,70 +29,87 @@ background-size: 10px 10px;
 
 
 body {
-  background: none;
+  background: $grey-bg;
   @include polka-dots;
 }
 
 
 // Circles for Hero Text Contact
-.hero-text-contact .circle-wrapper {
+.hero-text-contact .circle-wrapper,
+.hero-text-about .circle-wrapper {
   background: rgba(grey, 0.1);
   width: 50%;
-  //height: 100%;
   position: absolute;
   top: -200px;
   bottom: -50px;
   left: 0;
   z-index: -1;
-  //z-index: 100;
+}
 
+.hero-text-about .circle-wrapper {
+  left: auto;
+  right: 0;
+}
 
-  .circle-1 {
-    display: block;
-    width: 200px;
-    height: 200px;
-    background: orange;
-    background: transparent;
-    //border: 8px solid $orange;
-    //@include triangles;
-    @include diagonal-lines;
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%); 
+.circle {
+  display: block;
+  //width: 200px;
+  //height: 200px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  //animation: circle-1-move 35s ease-in-out infinite;
+  transition: width 1s, height 1s;
   
-    animation: circle-1-move 35s ease-in-out infinite;
-    
-    transition: width 1s, height 1s;
-    
-    &:hover {
-      width: 22%;
-      height: 22%;
-    }
-  }
-  .circle-2 {
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: orange;
-    background: transparent;
-    //border: 8px solid $orange;
-    //@include triangles;
-    border: 3px solid $pink;
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%); 
-  
-    animation: circle-2-move 35s ease-in-out infinite;
-    
-    transition: width 1s, height 1s;
-    
-    &:hover {
-      width: 22%;
-      height: 22%;
-    }
+  &:hover {
+    width: 22%;
+    height: 22%;
   }
 }
 
+.hero-text-contact .circle-wrapper {
+  .circle-1 {
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    @include diagonal-lines;
+    animation: circle-1-move 35s ease-in-out infinite;
+  }
+  .circle-2 {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 3px solid $accent;
+    animation: circle-2-move 35s ease-in-out infinite;  
+  }
+}
+
+.hero-text-about .circle-wrapper {
+  .circle-1 {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 3px solid $accent;
+    animation: circle-1-move 35s ease-in-out infinite;
+  }
+  .circle-2 {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 3px solid $accent;
+    animation: circle-2-move 35s ease-in-out infinite;  
+  }
+  .circle-3 {
+    width: 360px;
+    height: 360px;
+    background: url('img/portrait.png') no-repeat center center;
+    background-size: 100% auto;
+    left: 60%;
+    top: 40%;
+    animation: circle-3-move 35s ease-in-out infinite;  
+  }
+}
 
 
 
@@ -137,6 +155,28 @@ body {
   100% {
     left: 40%;
     top: 20%;
+  }
+}
+
+@keyframes circle-3-move {
+  0% {
+    left: 60%;
+    top: 40%;
+  }
+
+  30% {
+    left: 65%;
+    top: 50%;
+  }
+
+  65% {
+    left: 57%;
+    top: 45%;
+  }
+
+  100% {
+    left: 60%;
+    top: 40%;
   }
 }
 

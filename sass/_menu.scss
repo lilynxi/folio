@@ -1,4 +1,4 @@
-
+@import 'fonts';
 
 
 // Menu
@@ -40,7 +40,7 @@
 
 
 .main-navigation {
-  background: $black !important;
+  background: $accent !important;
   //width: 100% !important;
 }
 
@@ -68,6 +68,7 @@
     gap: 60px;
   }
 
+
   .menu {
     margin-right: 0 !important;
     li {
@@ -75,8 +76,16 @@
       padding: 2px 0;
       a {
         font-size: 94px !important;
-        font-family: $archivo-black !important;
-        font-weight: $regular !important;
+        //font-family: $archivo-black !important;
+        //font-weight: $regular !important;
+
+        // --- font import
+        font-family: 'Archivo Expanded' !important;
+        font-weight: 700 !important;
+        font-style: normal;
+        font-display: swap;
+        // --- font import
+
         display: block;
         text-align: center;
         // padding: 2px 0;

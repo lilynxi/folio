@@ -1,0 +1,61 @@
+
+/* Font */
+$archivo: 'Archivo', sans-serif;
+//$archivo-black: 'Archivo Black', sans-serif;
+
+$thin: 100;
+$regular: 300;
+$bold: 700;
+
+
+// $regular: 400;
+// $medium: 500;
+// $semi-bold: 600;
+// $bold: 700;
+
+
+@font-face {
+  font-family: 'Archivo Expanded';
+  src: url('font/ArchivoExpanded-Bold.woff2') format('woff2'),
+      url('font/ArchivoExpanded-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo Expanded';
+  src: url('font/ArchivoExpanded-ExtraBold.woff2') format('woff2'),
+      url('font/ArchivoExpanded-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo Expanded';
+  src: url('font/ArchivoExpanded-Black.woff2') format('woff2'),
+      url('font/ArchivoExpanded-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@mixin font-title {
+  font-family: 'Archivo Expanded';
+  font-weight: $bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font-thin {
+  font-family: $archivo;
+  font-weight: $thin;
+  line-height: 1.1;
+}
+
+@mixin font-regular {
+  font-family: $archivo;
+  font-weight: $regular !important;
+}
